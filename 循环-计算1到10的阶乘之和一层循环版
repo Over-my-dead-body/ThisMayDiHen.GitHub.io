@@ -1,0 +1,12 @@
+#include<stdio.h>
+int main(){
+	int n;
+	int sum=0;//记得赋初值！！！ 
+	int ret=1;
+	for(n=1;n<=10;n++){
+		ret=ret*n;
+		sum+=ret;
+	}
+	printf("sum=%d\n",sum);
+	return 0;
+}
