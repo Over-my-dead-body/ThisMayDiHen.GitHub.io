@@ -1,0 +1,13 @@
+#include<stdio.h>
+int main(){
+	int i,n,ret,sum;
+	for(n=1;n<=10;n++){
+		for(ret=1,i=1;i<=n;i++){
+ //此处的<=需要注意！↑↑ 
+			ret*=i;
+		}
+		sum+=ret;
+	}
+	printf("sum=%d\n",sum);
+	return 0;
+}
