@@ -1,0 +1,28 @@
+#include<stdio.h>
+int main(){
+	int arr[]={1,2,3,4,5,6,8,9,10,17};
+	int k=7;
+	int sz=sizeof(arr)/sizeof(arr[0]);
+	int left=0;
+	int right=sz-1;
+	int mid=0;
+	while(left<=right){
+		mid=(left+right)/2;
+//注意mid定义位置！每次都需要mid必须随着while循环里left与right的变化而变化故需在循环里
+//同时因为mid每轮的初值须在之后为left与right作用故须在后面内容之前 
+		if(arr[mid]>k){
+			right=mid-1;
+		}
+		else if(arr[mid]<k){
+			left=mid+1;
+		}
+		else{
+			printf("找到了，下标是：%d\n",mid);
+			break;
+		}
+	}
+	if(left>right){
+		printf("找不到了！");
+	}
+	return 0;
+} 
