@@ -1,0 +1,12 @@
+#include<stdio.h>
+int main(){
+	int a,b,r;
+	scanf("%d%d",&a,&b);
+	while(a%b){//自己想想辗转相除法去 
+		r=a%b;
+		a=b;
+		b=r;
+	}
+	printf("%d\n",b);
+	return 0;
+} 
