@@ -1,0 +1,23 @@
+#include<stdio.h>
+int main(){
+	int a,b,c;
+	scanf("%d%d%d",&a,&b,&c);//看他连着没加逗号，格式控制块必须一致！ 
+	int i=0;
+	if(a<b){
+		i=a;
+		a=b;
+		b=i;
+	}
+	if(a<c){
+		i=a;
+		a=c;
+		c=i;
+	}
+	if(b<c){
+		i=b;//注意！！！ 
+		b=c;//看这个是怎么用第三个变量来换的 
+		c=i;//顺序不能错！ 
+	}
+	printf("%d %d %d\n",a,b,c);
+	return 0;
+} 
