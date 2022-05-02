@@ -1,0 +1,14 @@
+#include<stdio.h>
+int main(){
+	int a=0,b=0;
+	for(a=1,b=1;a<=100;a++){
+		if(b>=20) break;
+		if(1==b%3){
+			b+=3;
+			continue;//注意continue的作用 
+		}
+		b+=5;
+	}
+	printf("%d\n",a);
+	return 0;
+} 
