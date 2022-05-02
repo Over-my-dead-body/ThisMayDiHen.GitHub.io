@@ -1,0 +1,16 @@
+#include<stdio.h>
+int main(){
+	int arr[]={-1,2,-3,4,5,6,7,8,14,10};
+	int max=arr[0];
+	//注意！！max的初值不可设定为例如0这样的独立数字！
+	//他至少是数组中的具体数才行！不然某些特殊情况会导致最后输出这个数非数组数而是你赋初值那个数！！ 
+	int i=0;
+	int sz=sizeof(arr)/sizeof(arr[0]);
+	for(i=1;i<sz;i++){//遍历寻找比你大的并变成比你大的那个 
+		if(arr[i]>max){
+			max=arr[i];
+		}
+	}
+	printf("max=%d\n",max);
+	return 0;
+} 
