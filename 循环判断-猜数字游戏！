@@ -1,0 +1,63 @@
+#include<stdio.h> 
+#include<windows.h>
+#include<stdlib.h>
+#include<time.h>
+void menus(){
+	printf("###################\n");
+	Sleep(700);
+	printf("###输入1开始游戏###\n");
+	Sleep(700);
+	printf("###输入0退出游戏###\n");
+	Sleep(700);
+	printf("###################\n");
+	Sleep(300);
+}
+void game(){
+	int ret=0;
+	int guess=0;
+	//生成一个随机数
+	//拿时间戳设置伪随机随机数的生成起始点
+	//time_t time(time_ *timer)
+	//time_t 
+	ret=rand()%100+1;//生成1-100内随机数 rand 
+	//（就是那个生成随机数的，但需要底下那个srand设置起点配合使用） 
+	printf("猜数字！"); 
+	//猜数字
+	while(1){
+		printf("请输数字：>");
+		scanf("%d",&guess);
+		if(guess>ret){
+			printf("猜大了\n");
+		}
+		else if(guess<ret){
+			printf("猜小了\n");
+		}
+		else if(guess==ret){
+			printf("恭喜你！猜对了\n");
+			break;
+		}
+	} 
+} 
+int main(){
+	int input=0;
+	srand((unsigned int)time(NULL));//需要使用#include<time.h>头文件！ 
+	//设置生成起始点（通过时间戳）NULL是空指针 
+	do{
+		menus();
+		printf("请选择！:");
+		scanf("%d",&input);
+		switch(input){
+			case 1:
+				system("cls");
+				game();
+				break;
+			case 0:
+				printf("退出游戏\n");
+				break;
+			default:
+				printf("选择错误\n");
+				break; 
+		} 
+	} while(input);
+	return 0;
+} 
