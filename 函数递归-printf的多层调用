@@ -1,0 +1,6 @@
+#include<stdio.h>
+int main(){
+	printf("%d",printf("%d",printf("%d",43)));//printf函数每次返回类型都是其打印在屏幕上的字符个数
+	//输出4321 
+	return 0;
+}
