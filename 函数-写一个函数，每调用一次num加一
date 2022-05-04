@@ -1,0 +1,14 @@
+#include<stdio.h>
+void Add(*p){
+	(*p)++;//注意++运算符的优先级高于*，不加括号就变成p++了 
+}
+int main(){
+	int num=0;
+	Add(&num);
+	printf("num=%d\n",num); 
+	Add(&num);
+	printf("num=%d\n",num); 
+	Add(&num);
+	printf("num=%d\n",num); 
+	return 0; 
+}
