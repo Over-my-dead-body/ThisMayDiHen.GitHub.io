@@ -1,0 +1,38 @@
+#include<stdio.h>
+int binary_search(int arr[],int k,int sz){
+	//算法的实现
+	//注意！！下面这句是错的！
+	//了一个数组并用数组求sz实则是传了一个指针，意义是指针大小与数组首元素大小之比
+	//sz=sizeof(arr)/sizeof(arr[0]);//这句是错滴！
+	int left=0;
+	int right=sz-1;
+	int mid;
+	while(left<=right){//注意！这里必须是小于等于，不让可能就会不进去（具体原因自己理解）
+		mid=(left+right)/2;
+		if(arr[mid]<k){
+			left=mid+1;
+		}
+		else if(arr[mid]>k){
+			right=mid-1;
+		}
+		else if(arr[mid]=k){
+			return mid;
+		}
+	}//经典！有返回什么没返回什么
+		return -1;
+}
+int main(){
+	int arr[]={1,2,3,4,5,6,7,8,9,10};
+	int k=7;
+	int sz=sizeof(arr)/sizeof(arr[0]); 
+	int ret=binary_search(arr,k,sz);
+	//先写出来函数怎么用，再写函数的具体大小
+	//如果找到了返回下标，找不到返回-1
+	if(ret==-1){
+		printf("找不到指定数字\n");
+	}
+	else{
+		printf("找到了，下标是：%d\n",ret);
+	}
+	return 0;
+}
