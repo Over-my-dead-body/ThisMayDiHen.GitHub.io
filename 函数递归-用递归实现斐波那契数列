@@ -1,0 +1,18 @@
+#include<stdio.h>
+int Fib(int n)
+	//思路：斐波那契数列每个数为前两个数之和
+	//斐波那契：1 1 2 3 5 8 13 21 34 55 
+	//n<=2时均为1
+	//n>2时 Fib(n)=Fib(n-1) +Fib(n-2) 
+{
+	if(n<=2)
+		return 1;
+	else
+		return Fib(n-1)+Fib(n-2); 
+}
+int main(){
+	int n;
+	scanf("%d",&n);
+	printf("Fib=%d",Fib(n));
+	return 0;
+} 
