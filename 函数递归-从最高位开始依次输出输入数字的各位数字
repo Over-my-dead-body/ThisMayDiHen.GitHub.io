@@ -13,7 +13,6 @@ void print(int n){
 int main(){
 	unsigned int num =0;
 	scanf("%d",&num);
-	print
 	print(num);
 	return 0;
 } 
