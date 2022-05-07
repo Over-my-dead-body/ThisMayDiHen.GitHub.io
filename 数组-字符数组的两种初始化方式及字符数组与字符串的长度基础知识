@@ -1,0 +1,13 @@
+#include<stdio.h>
+#include<string.h>
+int main(){
+	char arr1[]={'a','b','c','d','e','f'}; 
+	char arr2[]="abcedf";
+	printf("%d\n",sizeof(arr1));
+	printf("%d\n",strlen(arr1));
+	printf("%d\n",sizeof(arr2));
+	//sizeof()函数执行过程：a b c d e f \0 ,所以数了7个 
+	printf("%d",strlen(arr2));
+	//strlen()函数执行过程：a b c d e f ,所以数了6个 
+	return 0;
+}
