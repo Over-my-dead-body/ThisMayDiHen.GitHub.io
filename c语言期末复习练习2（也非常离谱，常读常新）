@@ -1,0 +1,41 @@
+#include<stdio.h>
+//编程输出大于100的最小的5个特殊素数；特殊素数满足如下条件：
+//它是素数（只能被1和本身整除），且至少有两位数字相同，例如113、181等。
+//要求：判断素数的操作使用函数实现 int isPrime(int n)
+//（该函数返回1表示n是素数；否则不是素数）。
+//例输出：101 113 131 151 181
+int isPrime(int n){
+int i=0;
+for(i=2;i<n;i++){
+    if(n%i==0){
+    return i;
+    }
+}
+return 1;
+}
+
+int main(){
+int n=100,count=0;
+int Ge,Sh,Bai;
+int PanDuan;
+//printf("%d ",isPrime(n));
+//底下部分有问题!
+while(1){
+    PanDuan=isPrime(n);
+    if(PanDuan==1){
+        Ge=n%10;
+        Sh=(n/10)%10;
+        Bai=n/100;
+            if(Ge==Sh||Sh==Bai||Ge==Bai){
+			//你牛啊！这个Ge==Bai楞给写成了Ge==Sh
+                printf("%d ",n);
+                count++;
+                if(count==5){
+                    break;
+                }
+            }
+    }
+   n++;
+}
+return 0;
+}
