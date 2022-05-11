@@ -1,0 +1,20 @@
+#include<stdio.h>
+void replace(char*p,char*q){
+	int i;
+	for(i=0;i<20;i++){
+		if(*(p+i)>='a'&&*(p+i)<='z'){
+			*(p+i)=*(p+i)-('a'-'A');
+		}
+	}
+	for(i=0;i<20;i++){
+		*(q+i)=*(p+i);
+		//伙计！注意左值是被操作数，你应该写成现在这样而不是反着！！！！ 
+	}
+}
+void main(){
+	char s1[20];
+	char s2[20];
+	gets(s1);
+	replace(s1,s2);
+	puts(s2);
+} 
