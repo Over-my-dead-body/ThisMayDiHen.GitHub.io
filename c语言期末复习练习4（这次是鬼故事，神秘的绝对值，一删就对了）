@@ -1,0 +1,30 @@
+
+#include<stdio.h>
+int main(){
+	double x,FZ,item,S=0;
+	int FM,flag=1,Q;
+	scanf("%lf",&x);
+	if(x<0.0&&x>1.0){
+		printf("输入错误！"); 
+		return 0; 
+	}
+	FZ=x;
+	Q=1;
+	FM=Q;
+	while(1){
+		item=(flag*FZ)/(FM*1.0);
+		S+=item;
+		if(item<0){
+			item=-item;
+		}
+		if(item<0.000001){
+			printf("%lf",S);
+			break;
+		}
+		Q+=2;
+		FZ*=x*x;
+		FM=Q;
+		flag=-flag; 
+	}
+	return 0;
+}
