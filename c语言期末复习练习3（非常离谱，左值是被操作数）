@@ -1,3 +1,9 @@
+/*
+void replace(char *p, char *q);字符串p（字符数不超过20个），
+将其中小写字母改为相对应的大写字母后，将替换后的整个字符串存储到q中
+*/
+
+
 #include<stdio.h>
 void replace(char*p,char*q){
 	int i;
