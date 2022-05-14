@@ -1,0 +1,36 @@
+//编程输出大于10000的最小的5个特殊素数，该特殊素数的各个数位数字之和满足形式为4*n+1形式，
+//例如10039、10079满足要求。要求：判断素数的操作使用函数实现 int isPrime(int n)
+//（该函数返回1表示n是素数；否则不是素数）。
+//例子：10039 10079 10093 10103 10169
+
+#include<stdio.h>
+
+int isPrime(int x){
+    int i;
+    for(i=2;i<x;i++){
+        if(x%i==0){
+            return i;
+        }
+    }
+    return 1;
+}
+int main()
+{
+    int i=10000,count=0,PanDuan=1,Ge,Shi,Bai,Qian,Wan,WoW;
+    for(i=10000;count<5;i++){
+        Wan=i/10000;
+        Qian=(i%10000)/1000;
+        Bai=(i%1000)/100;
+        Shi=(i%100)/10;
+        Ge=(i%10)/1;
+        WoW=Ge+Shi+Bai+Qian+Wan;
+        PanDuan=isPrime(i);
+        if(PanDuan==1){
+            if((WoW-1)%4==0){
+            printf("%d ",i);
+            count++;
+            }
+        }
+    }
+    return 0;
+ }
