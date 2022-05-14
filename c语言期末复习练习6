@@ -1,0 +1,25 @@
+//字符替换：从键盘读入一个字符串，编程实现字符串中字符替换。
+//要求编制函数 void replace(char *str, char a, char b); 
+//将字符串str中的所有字符a全部替换为字符b。请编程实现对上述函数的调用。
+
+#include<stdio.h>
+
+void replace(char*str,char a,char b)
+{
+    int i=0;
+    for(i=0;str[i]!='\0';i++)
+    {
+        if(str[i]==a)
+        {
+            str[i]=b;
+        }
+    }
+}
+
+void main()
+{
+    char s[20],x='a',y='Z';
+    gets(s);
+    replace(s,x,y);
+    puts(s);
+}
