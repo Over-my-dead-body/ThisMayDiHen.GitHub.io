@@ -1,0 +1,27 @@
+#include<stdio.h>
+int isPrime(int n){
+    int i=2;
+    for(i=2;i<n;i++){
+        if(n%i==0){
+            return i;
+        }
+    }
+    return 1;
+}
+int main()
+{
+    int i=100,count=0,GE,SHI,BAI,SU;
+    for(i=100;count<5;i++){
+        BAI=i/100;
+        SHI=(i%100)/10;
+        GE=(i%100)%10;
+        SU=isPrime(i);
+        if(SU==1){
+            if(GE==SHI||SHI==BAI||GE==BAI){
+                count++;
+                printf("%d ",i);
+            }
+        }
+    }
+    return 0;
+}
