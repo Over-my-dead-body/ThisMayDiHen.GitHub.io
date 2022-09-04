@@ -1,0 +1,56 @@
+#include<iostream>
+using namespace std; //很重要！你咋还能忘了捏 
+//class CRectangle{
+//	public://全员全可访问 
+//		int w,h;
+//		void Init(int w1,int h1){//这里是一个传值初始化的函数，可用构造函数代替,但本题需要输入值，不知道行不行 
+//			w=w1;h=h1;
+//		}
+//	//	CRectangle(int w1,int h1){
+//	//		w=w1;h=h1;				//构造函数大概长这样，但这个程序不知道能不能用 
+//	//	}
+//		int Area(){
+//			return w*h;//一个算面积的函数 
+//		}
+//		int Perimeter(){
+//			return 2*(w+h);//一个算周长的函数 
+//		}
+//};
+//上面这个也可以改成类里只有函数声明，见下
+//----------------------------------------------------------
+class CRectangle{
+	public:
+		int w,h;
+		void Init(int w1,int h1); 
+		int Area();
+		int Perimeter();
+}; 
+void CRectangle::Init(int w1,int h1){//这里是一个传值初始化的函数，可用构造函数代替,但本题需要输入值，不知道行不行 
+	w=w1;h=h1;
+}
+int CRectangle::Area(){
+	return w*h;
+}
+int CRectangle::Perimeter(){
+	return 2*(w+h);
+}
+int main(){
+	int w,h;
+//	CRectangle r;//把 CRectangle 看作是r的类型 
+//	cin>>w>>h;
+//	r.Init(w,h);//用.方式进行访问 
+//	cout<<r.Area()<<endl<<r.Perimeter();
+//----------------------------------------------------
+//	CRectangle r;
+//	CRectangle *p=&r;//别忘了指针的定义方式啊啊啊啊！你一开始竟然*p=&r没写初始化
+//	cin>>w>>h;
+//	p->Init(w,h);//用指针->方式进行访问 
+//	cout<<p->Area()<<endl<<p->Perimeter();
+//----------------------------------------------------
+	CRectangle r;
+	CRectangle &r2=r;//注意！你刚刚这里写错了，引用必须一出来就绑定上，必须一出来就绑定！！！记住 
+	cin>>w>>h;
+	r2.Init(w,h);
+	cout<<r2.Area()<<endl<<r2.Perimeter();
+	return 0;
+}
