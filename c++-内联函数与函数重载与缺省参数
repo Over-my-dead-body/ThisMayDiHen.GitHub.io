@@ -1,0 +1,31 @@
+#include<iostream>
+using namespace std;
+class Location{
+	private:
+		int x,y;
+	public:
+		void init(int x=0,int y=0);//仅声明未定义，未加inline不是内联成员函数
+		//内连成员函数的两种定义方式：
+		//1.不写inline但是整个函数体全体都写在类里
+		//2.写inline但是只有函数声明写在类里，函数定义写在类外 
+		void valueX(int val){
+			x=val;
+		}
+		int valueX(){
+			return x;
+		}
+};
+void Location::init(int X,int Y){
+//在函数外进行定义 
+//格式：函数类型  类名：：函数名（参数表） 
+	x=X;//接口函数将函数接收到的值赋值给private私有的成员元素x与y 
+	y=Y;
+} 
+int main(){
+	Location A;
+	A.init(5);//给x赋值5，给y赋值0(y没赋值直接用的前面的缺省参数0) 
+	A.valueX(5);//识别为成员数带参数者，执行为为x赋值为val(=5) 
+	cout<<A.valueX();//识别为无参数者函数，执行为返回x值 
+	//于是输出了函数返回的x值 
+	return 0;
+}
