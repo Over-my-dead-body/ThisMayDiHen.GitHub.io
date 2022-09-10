@@ -1,0 +1,36 @@
+#include<iostream>
+using namespace std;
+class CSample{
+	int x;
+public:
+	CSample(){
+		cout<<"Constructor 1 Called"<<endl;
+	}
+	CSample(int n){
+		x=n;
+		cout<<"Construct 2 Called"<<endl;
+	}
+};
+int main(){
+	CSample arr1[2];//无参函数，数组形式调用两次无参函数 
+	cout<<"step1"<<endl;
+	CSample arr2[2]={4,5};//有参函数，第一次参数是4，第二次参数是5，调用两次有参函数 
+	cout<<"step2"<<endl;
+	CSample arr3[2]={3};//第一次调用有参函数，第二次调用无参函数 
+	cout<<"step3"<<endl;
+	CSample*array4=new CSample[2];//无参函数，数组形式调用两次无参函数
+	delete []array4;
+	return 0;
+	//结果： 
+	//Constructor 1 Called
+	//Constructor 1 Called
+	//step1
+	//Construct 2 Called
+	//Construct 2 Called
+	//step2
+	//Construct 2 Called
+	//Constructor 1 Called
+	//step3
+	//Constructor 1 Called
+	//Constructor 1 Called
+} 
