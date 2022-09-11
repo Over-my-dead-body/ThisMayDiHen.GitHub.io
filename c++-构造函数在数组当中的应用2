@@ -1,0 +1,18 @@
+#include<iostream>
+using namespace std;
+class Test{
+	public:
+		Test(int n){ }
+		Test(int n,int m){ }
+		Test(){ }
+};
+int main(){
+	Test array1[3]={1,Test(1,2)};
+	//三个元素分别用（1）（2）（3）初始化 
+	Test array2[3]={Test(2,3),Test(1,2),1};
+	//三个元素分别用（2）（2）（1）初始化 
+	Test*pArray[3]={new Test(4),new Test(1,2)};
+	//指针类在未指向未初始化时只是一个普通的任意指针，不会调用到构造函数 
+	//两个元素（第三个元素不调用）分别用（1）（2）初始化 
+	return 0;
+}
